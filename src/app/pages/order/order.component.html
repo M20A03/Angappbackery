@@ -1,0 +1,46 @@
+<div class="order-container">
+    <div class="order-form-card">
+        <h2>Place Your Order</h2>
+        <form (ngSubmit)="submitOrder()" #orderForm="ngForm">
+            <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" [(ngModel)]="order.name" required placeholder="Your Name">
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" [(ngModel)]="order.phone" required placeholder="+91XXXXXXXXXX">
+            </div>
+
+            <div class="form-group">
+                <label for="cake">Select Cake</label>
+                <select id="cake" name="cake" [(ngModel)]="order.cake" required>
+                    <option value="" disabled selected>Choose a cake...</option>
+                    @for (cake of cakes; track cake) {
+                    <option [value]="cake">{{ cake }}</option>
+                    }
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="quantity">Quantity</label>
+                <input type="number" id="quantity" name="quantity" [(ngModel)]="order.quantity" min="1" max="10"
+                    required>
+            </div>
+
+            <div class="form-group">
+                <label for="address">Delivery Address</label>
+                <textarea id="address" name="address" [(ngModel)]="order.address" rows="3" required
+                    placeholder="Your complete address"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="notes">Special Requests (Optional)</label>
+                <textarea id="notes" name="notes" [(ngModel)]="order.notes" rows="2"
+                    placeholder="Message on cake, any exclusions/inclusions, etc."></textarea>
+            </div>
+
+            <button type="submit" [disabled]="!orderForm.form.valid" class="submit-btn">Order Now</button>
+        </form>
+    </div>
+</div>

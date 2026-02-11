@@ -1,0 +1,34 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #fff0f3;
+    /* Light pinkish background */
+    color: #333;
+    min-height: 100vh;
+}
+
+.main-content {
+    min-height: calc(100vh - 70px);
+    /* Adjust based on navbar height */
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Playfair Display', serif;
+}
+
+button {
+    font-family: 'Poppins', sans-serif;
+}

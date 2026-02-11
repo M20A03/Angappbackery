@@ -1,0 +1,18 @@
+<div class="products-container">
+    <h2>Our Delicious Cakes</h2>
+    <div class="products-grid">
+        @for (product of products; track product.id) {
+        <div class="product-card">
+            <img [src]="product.image" [alt]="product.name" class="product-image">
+            <div class="product-info">
+                <h3>{{ product.name }}</h3>
+                <p class="description">{{ product.description }}</p>
+                <div class="price-action">
+                    <span class="price">₹{{ product.price.toFixed(2) }}</span>
+                    <button class="add-btn">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+        }
+    </div>
+</div>
